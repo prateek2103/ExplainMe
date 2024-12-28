@@ -11,7 +11,7 @@ const ExplainMe = () => {
   const [topicError, setTopicError] = useState("");
   const [open, setOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const apiUri = process.env.EXPLAIN_ME_API_URI;
+  const apiUri = process.env.REACT_APP_EXPLAIN_ME_API_URI;
   const handleClose = (event, reason) => {
     if (reason === "clickaway") return;
     setOpen(false);
@@ -27,7 +27,6 @@ const ExplainMe = () => {
     }
 
     setIsLoading(true);
-
     const response = await axios.post(apiUri, topic, {
       headers: {
         "Content-Type": "application/json",
