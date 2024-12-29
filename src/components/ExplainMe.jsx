@@ -79,8 +79,13 @@ const ExplainMe = () => {
                   className="form-button"
                   disabled={isLoading}
                   type="submit"
+                  style={{
+                    transition: "all 0.3s ease",
+                    transform: isLoading ? "scale(0.95)" : "scale(1)",
+                    opacity: isLoading ? 0.7 : 1,
+                  }}
                 >
-                  Go
+                  {isLoading ? "..." : "Go"}
                 </button>
               </Grid>
             </Grid>
